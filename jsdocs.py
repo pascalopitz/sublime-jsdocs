@@ -244,7 +244,7 @@ class JsdocsParser:
         description = self.getNameOverride() or ('[%s description]' % name)
         out.append("${1:%s}" % description)
 
-        self.addExtraTags(out)
+        self.addExtraTags(out, name)
 
         # if there are arguments, add a @param for each
         if (args):
@@ -327,10 +327,12 @@ class JsdocsParser:
     def getArgName(self, arg):
         return arg
 
-    def addExtraTags(self, out):
+    def addExtraTags(self, out, name):
         extraTags = self.viewSettings.get('jsdocs_extra_tags', [])
-        if (len(extraTags) > 0):
-            out.extend(extraTags)
+
+        for tag in extraTags:
+            out.append(tag % name)
+
 
     def guessTypeFromName(self, name):
         hungarian_map = self.viewSettings.get('jsdocs_notation_map', [])

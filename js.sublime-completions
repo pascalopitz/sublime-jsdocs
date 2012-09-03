@@ -64,7 +64,7 @@
     { "trigger" : "@see",           "contents": "@see ${1:[description]}"},
     { "trigger" : "@since",         "contents": "@since ${1:[version]}"},
     { "trigger" : "@static",        "contents": ""},
-    { "trigger" : "@sumodule",      "contents": "@submodule ${1:[submodule]}"},
+    { "trigger" : "@submodule",      "contents": "@submodule ${1:[submodule]}"},
     { "trigger" : "@subpackage",    "contents": "@subpackage ${1:[name]}"},
     { "trigger" : "@this",          "contents": "@this {${1:[type]}}"},
     { "trigger" : "@throws",        "contents": "@throws {${1:[exceptionType]}} If ${2:[this condition is met]}"},
